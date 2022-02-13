@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.sandbox</groupId>
-	<artifactId>java</artifactId>
-	<name>Sandbox-java</name>
+	<artifactId>sandbox-java-ihe</artifactId>
+	<name>Sandbox-java-IHE</name>
 	<version>0.0.1</version>
     <packaging>pom</packaging>
-	<description>Tests for java before 8 </description>
+	<description>Tests for java ihe</description>
 	<url>https://github.com/fluentcodes/sandbox</url>
 
 	<properties>
@@ -22,7 +22,27 @@
 		<dependency>
 			<groupId>org.fluentcodes.ihe</groupId>
 			<artifactId>contracts-ebRS</artifactId>
-			<version>3.0</version>
+			<version>3.0_</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fluentcodes.ihe</groupId>
+			<artifactId>gen-hl7</artifactId>
+			<version>3.1.0_</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fluentcodes.ihe</groupId>
+			<artifactId>gen-fdv-json-testtreiber</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fluentcodes.ihe</groupId>
+			<artifactId>gen-ihe</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fluentcodes.ihe</groupId>
+			<artifactId>gen-xacml</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
