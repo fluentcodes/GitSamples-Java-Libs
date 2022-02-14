@@ -4,12 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.sandbox</groupId>
-	<artifactId>sandbox-java-ihe</artifactId>
-	<name>Sandbox-java-IHE</name>
+	<artifactId>sandbox-java-json-jackson</artifactId>
+	<name>Sandbox Java Json Jackson</name>
 	<version>0.0.1</version>
     <packaging>pom</packaging>
-	<description>Tests for java ihe</description>
-	<url>https://github.com/fluentcodes/sandbox</url>
+	<description>Tests with jacson</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,29 +19,24 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.fluentcodes.ihe</groupId>
-			<artifactId>contracts-ebRS</artifactId>
-			<version>3.0_</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.fluentcodes.ihe</groupId>
-			<artifactId>gen-hl7</artifactId>
-			<version>3.1.0_</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.13.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.fluentcodes.ihe</groupId>
-			<artifactId>gen-fdv-json-testtreiber</artifactId>
-			<version>2.0.4</version>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jdk8</artifactId>
+			<version>2.13.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.fluentcodes.ihe</groupId>
-			<artifactId>gen-ihe</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.fluentcodes.ihe</groupId>
-			<artifactId>gen-xacml</artifactId>
-			<version>2.0.0</version>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.13.1</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
