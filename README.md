@@ -1,3 +1,4 @@
-# Topic Branch Java Libs
+# Topic Branch Java Libs Jaxb
 
-Just an empty top branch for creating other topic branches with focos of a lib.
+## Links
+* https://www.vogella.com/tutorials/JAXB/article.html
