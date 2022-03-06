@@ -1,65 +1,44 @@
 package org.fluentcodes.java.libs.xml.jaxb;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.fluentcodes.java.libs.xml.jaxb.testitems.Book;
+import org.fluentcodes.java.libs.xml.jaxb.testitems.Bookstore;
 import org.junit.Test;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.List;
+
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createBook1;
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createBookList;
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createBookstore;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class BooksTest {
     private static final String BOOKSTORE_XML = "src/test/resources/bookstore-jaxb.xml";
+    private static final XmlMapper xmlMapper = new XmlMapper();
     @Test
-    public void test() throws JAXBException, FileNotFoundException {
-        List<Book> bookList = new ArrayList<Book>();
+    public void testBookStore() throws JAXBException, FileNotFoundException, JsonProcessingException {
+        Bookstore bookstore = createBookstore();
 
-        // create books
-        Book book1 = new Book();
-        book1.setIsbn("978-0060554736");
-        book1.setName("The Game");
-        book1.setAuthor("Neil Strauss");
-        book1.setPublisher("Harpercollins");
-        bookList.add(book1);
+        String xml = xmlMapper.writeValueAsString(bookstore);
+        assertEquals("", xml);
+    }
 
-        Book book2 = new Book();
-        book2.setIsbn("978-3832180577");
-        book2.setName("Feuchtgebiete");
-        book2.setAuthor("Charlotte Roche");
-        book2.setPublisher("Dumont Buchverlag");
-        bookList.add(book2);
+    @Test
+    public void testBookList() throws JAXBException, FileNotFoundException, JsonProcessingException {
+        List<Book> bookList = createBookList();
 
-        // create bookstore, assigning book
-        Bookstore bookstore = new Bookstore();
-        bookstore.setName("Fraport Bookstore");
-        bookstore.setLocation("Frankfurt Airport");
-        bookstore.setBookList(bookList);
+        String xmlList = xmlMapper.writeValueAsString(bookList);
+        assertEquals("", xmlList);
+    }
 
-        // create JAXB context and instantiate marshaller
-        JAXBContext context = JAXBContext.newInstance(Bookstore.class);
-        Marshaller m = context.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-        // Write to System.out
-        m.marshal(bookstore, System.out);
-
-        // Write to File
-        m.marshal(bookstore, new File(BOOKSTORE_XML));
-
-        // get variables from our xml file, created before
-        System.out.println();
-        System.out.println("Output from our XML File: ");
-        Unmarshaller um = context.createUnmarshaller();
-        Bookstore bookstore2 = (Bookstore) um.unmarshal(new FileReader(
-                BOOKSTORE_XML));
-        List<Book> list = bookstore2.getBooksList();
-        for (Book book : list) {
-            System.out.println("Book: " + book.getName() + " from "
-                    + book.getAuthor());
-        }
+    @Test
+    public void testBook() throws JAXBException, FileNotFoundException, JsonProcessingException {
+        Book book = createBook1();
+        assertEquals("<Book><name>The Game</name><author>Neil Strauss</author><publisher>Harpercollins</publisher><isbn>978-0060554736</isbn></Book>",
+                xmlMapper.writeValueAsString(book));
     }
 }

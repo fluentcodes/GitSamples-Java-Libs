@@ -1,7 +1,4 @@
-# Topic Branch Java Libs Jaxb
-* Example with Books and BookStore (BooksTest)
-* Example with an Employee Map (EmployeeMapTest)
-* Example with an untyped Map (MapTest): Not working, use Jackson librairy not jaxb!
+# Topic Branch Java Libs Jackson
 
 ## Links
-* https://www.vogella.com/tutorials/JAXB/article.html
+* https://www.baeldung.com/jackson-xml-serialization-and-deserialization

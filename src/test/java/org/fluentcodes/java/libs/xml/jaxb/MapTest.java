@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb.tomap;
+package org.fluentcodes.java.libs.xml.jaxb;
 
 import org.junit.Test;
 
@@ -9,6 +9,9 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createMapWithSubMap;
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createSimpleMap;
 
 /**
  * This does not work. Think one should not use jaxb for such type of untyped mapping and using jackson.
@@ -22,18 +25,11 @@ public class MapTest {
 
     @Test
     public void toXMLNotWorking() throws JAXBException {
-        HashMap<String, String> map1 = new HashMap<>();
-        map1.put("key1", "value1");
-        map1.put("key2", "value2");
-        HashMap<String, Object> map2 = new HashMap<>();
-        map2.put("key3", "value3");
-        map2.put("map1", map1);
-
         JAXBContext jaxbContext = JAXBContext.newInstance(Map.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        jaxbMarshaller.marshal(map1, System.out);
-        jaxbMarshaller.marshal(map2, System.out);
+        jaxbMarshaller.marshal(createSimpleMap(), System.out);
+        jaxbMarshaller.marshal(createMapWithSubMap(), System.out);
     }
 }

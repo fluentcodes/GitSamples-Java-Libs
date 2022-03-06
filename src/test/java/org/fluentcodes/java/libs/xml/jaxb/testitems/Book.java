@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb;
+package org.fluentcodes.java.libs.xml.jaxb.testitems;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -22,32 +22,36 @@ public class Book {
         return name;
     }
 
-    public void setName(String name) {
+    public Book setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public Book setAuthor(String author) {
         this.author = author;
+        return this;
     }
 
     public String getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public Book setPublisher(String publisher) {
         this.publisher = publisher;
+        return this;
     }
 
     public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public Book setIsbn(String isbn) {
         this.isbn = isbn;
+        return this;
     }
 
 }

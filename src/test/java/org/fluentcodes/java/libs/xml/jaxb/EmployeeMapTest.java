@@ -1,5 +1,7 @@
-package org.fluentcodes.java.libs.xml.jaxb.tomap;
+package org.fluentcodes.java.libs.xml.jaxb;
 
+import org.fluentcodes.java.libs.xml.jaxb.testitems.Employee;
+import org.fluentcodes.java.libs.xml.jaxb.testitems.EmployeeMap;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -7,6 +9,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+
+import static org.fluentcodes.java.libs.xml.jaxb.testitems.ItemProvider.createEmployeeMap;
 
 /**
  * https://howtodoinjava.com/jaxb/jaxb-example-marshalling-and-unmarshalling-hashmap-in-java/
@@ -17,13 +21,7 @@ public class EmployeeMapTest {
 
     @Test
     public void toXML() throws JAXBException {
-        EmployeeMap map = new EmployeeMap();
-        map
-                .add( new Employee()
-                        .setFirstName("Lokesh").setLastName("Gupta").setIncome(100.0))
-                .add( new Employee()
-                        .setFirstName("John").setLastName("Mclane").setIncome(200.0));
-
+        EmployeeMap map = createEmployeeMap();
         JAXBContext jaxbContext = JAXBContext.newInstance(EmployeeMap.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 

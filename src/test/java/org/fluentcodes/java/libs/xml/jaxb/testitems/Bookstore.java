@@ -1,4 +1,6 @@
-package org.fluentcodes.java.libs.xml.jaxb;
+package org.fluentcodes.java.libs.xml.jaxb.testitems;
+
+import org.fluentcodes.java.libs.xml.jaxb.testitems.Book;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
@@ -17,8 +19,9 @@ public class Bookstore {
     private String name;
     private String location;
 
-    public void setBookList(List<Book> bookList) {
+    public Bookstore   setBookList(List<Book> bookList) {
         this.bookList = bookList;
+        return this;
     }
 
     public List<Book> getBooksList() {
