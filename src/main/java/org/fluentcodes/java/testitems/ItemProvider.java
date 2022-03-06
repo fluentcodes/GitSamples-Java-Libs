@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb.testitems;
+package org.fluentcodes.java.testitems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,10 @@ public class ItemProvider {
     }
 
     public static Bookstore createBookstore() {
-        return new Bookstore().setBookList(createBookList());
+        return new Bookstore()
+                .setBookList(createBookList())
+                .setName("Fraport Bookstore")
+                .setLocation("Frankfurt Airport");
     }
 
     public static Employee createEmployee1() {
@@ -54,17 +57,45 @@ public class ItemProvider {
                 .add(createEmployee2());
     }
 
-    public static Map<String, String> createSimpleMap() {
-        HashMap<String, String> map1 = new HashMap<>();
-        map1.put("key1", "value1");
-        map1.put("key2", "value2");
-        return map1;
+    public static Map<String, String> createMapSimple() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
+        return map;
+    }
+
+    public static List<String> createListSimple() {
+        List< String> list = new ArrayList<>();
+        list.add("value1");
+        list.add("value2");
+        return list;
+    }
+
+    public static List<Object> createListWithSubMap() {
+        List<Object> list = new ArrayList<>();
+        list.add(createMapSimple());
+        list.add("value3");
+        return list;
+    }
+
+    public static List<Object> createListWithSubList() {
+        List<Object> list = new ArrayList<>();
+        list.add(createListSimple());
+        list.add("value3");
+        return list;
     }
 
     public static Map<String, Object> createMapWithSubMap() {
-        HashMap<String, Object> map2 = new HashMap<>();
-        map2.put("key3", "value3");
-        map2.put("map1", createSimpleMap());
-        return map2;
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("key3", "value3");
+        map.put("map1", createMapSimple());
+        return map;
+    }
+
+    public static Map<String, Object> createMapWithSubList() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("key3", "value3");
+        map.put("list", createListSimple());
+        return map;
     }
 }

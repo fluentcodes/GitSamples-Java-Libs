@@ -1,5 +1,6 @@
-package org.fluentcodes.java.libs.xml.jaxb.testitems;
+package org.fluentcodes.java.testitems;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -49,6 +50,7 @@ public class Book {
         return isbn;
     }
 
+    @XmlAttribute(name="isbn")
     public Book setIsbn(String isbn) {
         this.isbn = isbn;
         return this;

@@ -1,10 +1,9 @@
-package org.fluentcodes.java.libs.xml.jaxb.testitems;
-
-import org.fluentcodes.java.libs.xml.jaxb.testitems.Book;
+package org.fluentcodes.java.testitems;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.List;
 
 //This statement means that class "Bookstore.java" is the root-element of our example
@@ -15,11 +14,11 @@ public class Bookstore {
     @XmlElementWrapper(name = "bookList")
     // XmlElement sets the name of the entities
     @XmlElement(name = "book")
-    private List<Book> bookList;
+    private List<Book> bookList = new ArrayList<>();  // if not set problem with deserializing
     private String name;
     private String location;
 
-    public Bookstore   setBookList(List<Book> bookList) {
+    public Bookstore setBookList(List<Book> bookList) {
         this.bookList = bookList;
         return this;
     }
@@ -32,16 +31,18 @@ public class Bookstore {
         return name;
     }
 
-    public void setName(String name) {
+    public Bookstore setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public Bookstore setLocation(String location) {
         this.location = location;
+        return this;
     }
 
 }

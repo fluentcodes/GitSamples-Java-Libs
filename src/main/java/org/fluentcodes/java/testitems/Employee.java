@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb.testitems;
+package org.fluentcodes.java.testitems;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
