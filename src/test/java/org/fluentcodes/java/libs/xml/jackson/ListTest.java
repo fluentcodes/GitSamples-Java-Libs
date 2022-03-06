@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb;
+package org.fluentcodes.java.libs.xml.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.fluentcodes.java.libs.xml.jaxb.BooksTest.XML_MAPPER;
+import static org.fluentcodes.java.libs.xml.jackson.BooksTest.XML_MAPPER;
 import static org.fluentcodes.java.testitems.ItemProvider.createListSimple;
 import static org.fluentcodes.java.testitems.ItemProvider.createListWithSubList;
 import static org.fluentcodes.java.testitems.ItemProvider.createListWithSubMap;

@@ -1,10 +1,10 @@
-package org.fluentcodes.java.libs.xml.jaxb;
+package org.fluentcodes.java.libs.xml.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fluentcodes.java.testitems.EmployeeMap;
 import org.junit.Test;
 
-import static org.fluentcodes.java.libs.xml.jaxb.BooksTest.XML_MAPPER;
+import static org.fluentcodes.java.libs.xml.jackson.BooksTest.XML_MAPPER;
 import static org.fluentcodes.java.testitems.ItemProvider.createEmployeeMap;
 import static org.junit.Assert.assertEquals;
 

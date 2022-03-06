@@ -1,4 +1,4 @@
-package org.fluentcodes.java.libs.xml.jaxb;
+package org.fluentcodes.java.libs.xml.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
