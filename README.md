@@ -10,6 +10,7 @@ Information about the code content is in the [github wiki](https://github.com/fl
 
 ## Recently
 March 2022
+* [java-springboot-properties](https://github.com/fluentcodes/sandbox/tree/java-springboot-properties): Properties and @Values
 * [java-libs-xml-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jackson): Initial with check of untyped serialization
 * [java-libs-xml-jaxb](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jaxb): Check of untyped serialization
 
@@ -36,6 +37,4 @@ I filled it initially with some content, but not all.
 
 
 ### Links
-* https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/
-* https://www.educative.io/edpresso/how-to-delete-remote-branches-in-git
-* https://phoenixnap.com/kb/how-to-rename-git-branch-local-remote
+* https://codingsight.com/git-branching-naming-convention-best-practices/
