@@ -1,6 +1,4 @@
-{
-  "city": "city",
-  "state": "state",
-  "line": "line",
-  "zip": 1
-}
+city: "city"
+state: "state"
+line: "line"
+zip: 1

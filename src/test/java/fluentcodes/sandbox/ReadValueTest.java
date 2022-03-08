@@ -13,7 +13,7 @@ public class ReadValueTest {
     @Test
     public void testReadValue() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        Address address = mapper.readValue(new File("src/test/resources/address.json"), Address.class);
+        Address address = mapper.readValue(new File("src/test/resources/address.yaml"), Address.class);
         assertEquals("{\"line\":\"line\",\"city\":\"city\",\"state\":\"state\",\"zip\":1}", mapper.writeValueAsString(address));
     }
 }
