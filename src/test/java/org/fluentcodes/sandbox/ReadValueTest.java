@@ -1,6 +1,7 @@
 package org.fluentcodes.sandbox;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.fluentcodes.sandbox.testitems.Address;
 import org.junit.Test;
 
 import java.io.File;

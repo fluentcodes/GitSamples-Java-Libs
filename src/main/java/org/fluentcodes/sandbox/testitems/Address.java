@@ -1,4 +1,4 @@
-package org.fluentcodes.sandbox;
+package org.fluentcodes.sandbox.testitems;
 
 public class Address {
     private String line;
