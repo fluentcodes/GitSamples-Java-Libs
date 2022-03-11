@@ -6,13 +6,43 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ItemProvider {
     private ItemProvider() {
     }
+
+    public static Address createAddress1() {
+        return new Address()
+            .setCity("city")
+            .setState("state")
+            .setLine("line")
+            .setZip(1);
+    }
+
+    public static Address createAddress2() {
+        return new Address()
+            .setCity("Munich")
+            .setState("Bavaria")
+            .setLine("Marienplatz 1")
+            .setZip(8000);
+    }
+
+    public static List<Address> createAddressList() {
+        return Arrays.asList(createAddress1(), createAddress2());
+    }
+
+    public static Map<String, Address> createAddressMap() {
+        Map<String, Address> addressMap = new TreeMap<>();
+        addressMap.put("key1", createAddress1());
+        addressMap.put("key2", createAddress2());
+        return addressMap;
+    }
+
     public static ObjectMapper MAPPER = createObjectMapper();
 
     public static ObjectMapper createObjectMapper() {

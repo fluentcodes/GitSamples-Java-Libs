@@ -11,31 +11,35 @@ public class Address {
         return line;
     }
 
-    public void setLine(String line) {
+    public Address setLine(String line) {
         this.line = line;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public Address setCity(String city) {
         this.city = city;
+        return this;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public Address setState(String state) {
         this.state = state;
+        return this;
     }
 
     public Integer getZip() {
         return zip;
     }
 
-    public void setZip(Integer zip) {
+    public Address setZip(Integer zip) {
         this.zip = zip;
+        return this;
     }
 }
