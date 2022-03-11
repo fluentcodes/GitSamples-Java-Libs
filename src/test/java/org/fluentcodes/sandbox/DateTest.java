@@ -1,4 +1,4 @@
-package fluentcodes.sandbox;
+package org.fluentcodes.sandbox;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
