@@ -2,8 +2,8 @@ package org.fluentcodes.java.libs.xml.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import org.fluentcodes.java.testitems.Book;
-import org.fluentcodes.java.testitems.Bookstore;
+import org.fluentcodes.sandbox.testitems.Book;
+import org.fluentcodes.sandbox.testitems.Bookstore;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -13,9 +13,9 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.fluentcodes.java.testitems.ItemProvider.createBook1;
-import static org.fluentcodes.java.testitems.ItemProvider.createBookList;
-import static org.fluentcodes.java.testitems.ItemProvider.createBookstore;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createBook1;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createBookList;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createBookstore;
 import static org.junit.Assert.assertEquals;
 
 public class BooksTest {

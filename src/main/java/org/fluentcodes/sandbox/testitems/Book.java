@@ -1,4 +1,4 @@
-package org.fluentcodes.java.testitems;
+package org.fluentcodes.sandbox.testitems;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

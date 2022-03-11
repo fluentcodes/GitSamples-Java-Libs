@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 import static org.fluentcodes.java.libs.xml.jackson.BooksTest.XML_MAPPER;
-import static org.fluentcodes.java.testitems.ItemProvider.createMapWithSubList;
-import static org.fluentcodes.java.testitems.ItemProvider.createMapWithSubMap;
-import static org.fluentcodes.java.testitems.ItemProvider.createMapSimple;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapWithSubList;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapWithSubMap;
+import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapSimple;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 

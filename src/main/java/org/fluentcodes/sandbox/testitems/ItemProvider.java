@@ -1,4 +1,4 @@
-package org.fluentcodes.java.testitems;
+package org.fluentcodes.sandbox.testitems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
