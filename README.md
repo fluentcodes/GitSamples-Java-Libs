@@ -1,16 +1,18 @@
-# Topic Branch master
-The sandbox repository should show how you can use git to
-* gather codes from experiment
-* divide it in topic branches
-* share it with others
-* document it with an external wiki
+# Topic Branch: Master
 
-So you will find only this README on master. **The branches contains the code**.
-Information about the code content is in the [github wiki](https://github.com/fluentcodes/sandbox/wiki).
+The sandbox repository should show how you can use git to
+* gather codes from experiment in working tests
+* divide it in **topic branches**
+* share it with others
+
+You find only this README on master **topic branch**. 
 
 ## Recently
 March 2022
+* [java-libs-json-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-json-jackson): Updated it with typed maps and lists.
+  * 
 * [java-springboot-properties](https://github.com/fluentcodes/sandbox/tree/java-springboot-properties): Properties and @Values
+  * Added [SpringConfigurableEnvironment](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/main/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironment.java) and SpringConfigurableEnvironmentTest](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/test/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironmentTest.java) for showing all properties with its sources as a map.
 * [java-libs-xml-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jackson): Initial with check of untyped serialization
 * [java-libs-xml-jaxb](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jaxb): Check of untyped serialization
 
