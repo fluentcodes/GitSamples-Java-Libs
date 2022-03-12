@@ -5,14 +5,14 @@ The sandbox repository should show how you can use git to
 * divide it in **topic branches**
 * share it with others
 
-You find only this README on master **topic branch**. 
+You find only this README on the master **topic branch**. 
 
-## Recently
+## Recent
 March 2022
 * [java-libs-json-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-json-jackson): Updated it with typed maps and lists.
-  * 
+  * Added typed [map](https://github.com/fluentcodes/sandbox/blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressListTest.java) and [list](https://github.com/fluentcodes/sandbox/blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressMapTest.java) tests.
 * [java-springboot-properties](https://github.com/fluentcodes/sandbox/tree/java-springboot-properties): Properties and @Values
-  * Added [SpringConfigurableEnvironment](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/main/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironment.java) and SpringConfigurableEnvironmentTest](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/test/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironmentTest.java) for showing all properties with its sources as a map.
+  * Added [SpringConfigurableEnvironment](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/main/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironment.java) and [SpringConfigurableEnvironmentTest](https://github.com/fluentcodes/sandbox/blob/java-springboot-properties/src/test/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironmentTest.java) for showing all properties with its sources as a map.
 * [java-libs-xml-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jackson): Initial with check of untyped serialization
 * [java-libs-xml-jaxb](https://github.com/fluentcodes/sandbox/tree/java-libs-xml-jaxb): Check of untyped serialization
 
