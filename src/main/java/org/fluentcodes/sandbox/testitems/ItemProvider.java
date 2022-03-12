@@ -16,6 +16,18 @@ public class ItemProvider {
     private ItemProvider() {
     }
 
+    public static ObjectMapper MAPPER = createObjectMapper();
+
+    public static ObjectMapper createObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
+        objectMapper.registerModule(new Jdk8Module());
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        return objectMapper;
+    }
+
     public static Address createAddress1() {
         return new Address()
             .setCity("city")
@@ -41,18 +53,6 @@ public class ItemProvider {
         addressMap.put("key1", createAddress1());
         addressMap.put("key2", createAddress2());
         return addressMap;
-    }
-
-    public static ObjectMapper MAPPER = createObjectMapper();
-
-    public static ObjectMapper createObjectMapper() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        objectMapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
-        objectMapper.registerModule(new Jdk8Module());
-        objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        return objectMapper;
     }
 
     public static Map<String, String> createMapSimple() {
