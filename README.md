@@ -1,14 +1,17 @@
 # Topic Branch: Master
 
-The sandbox repository should show how you can use git to
+The **sandbox** repository should show how you can use git to
 * gather codes from experiment in working tests
 * divide it in **topic branches**
 * share it with others
+
+If you like to extend this repository you're welcome. Actually it's focus are my topics. 
 
 You find only this README on the master **topic branch**. 
 
 ## Recent
 March 2022
+* [java-springboot-objects](../java-springboot-objects): Added different component examples.
 * [java-libs-json-jackson](https://github.com/fluentcodes/sandbox/tree/java-libs-json-jackson): Updated it with typed maps and lists.
   * Added typed [map](https://github.com/fluentcodes/sandbox/blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressListTest.java) and [list](https://github.com/fluentcodes/sandbox/blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressMapTest.java) tests.
 * [java-springboot-properties](https://github.com/fluentcodes/sandbox/tree/java-springboot-properties): Properties and @Values
