@@ -41,5 +41,11 @@ The external wiki is the wiki of github.
 I filled it initially with some content, but not all.
 
 
-### Links
+## Links
 * https://codingsight.com/git-branching-naming-convention-best-practices/
+
+## Links on Github.md
+* ../java-springboot-objects
+* /tree/java-springboot-objects
+* /java-springboot-objects
+
