@@ -1,9 +1,9 @@
-package org.fluentcodes.sandbox;
+package sources;
 
-import static org.fluentcodes.sandbox.testitems.ItemProvider.MAPPER;
-import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapSimple;
-import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapWithSubList;
-import static org.fluentcodes.sandbox.testitems.ItemProvider.createMapWithSubMap;
+import static sources.testitems.ItemProvider.MAPPER;
+import static sources.testitems.ItemProvider.createMapSimple;
+import static sources.testitems.ItemProvider.createMapWithSubList;
+import static sources.testitems.ItemProvider.createMapWithSubMap;
 import static org.junit.Assert.assertEquals;
 
 import com.fasterxml.jackson.core.JsonProcessingException;

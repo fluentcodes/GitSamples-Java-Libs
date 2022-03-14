@@ -1,4 +1,4 @@
-package org.fluentcodes.sandbox;
+package sources;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.IOException;
-import org.fluentcodes.sandbox.testitems.LocalDateTimeExample;
+import sources.testitems.LocalDateTimeExample;
 import org.junit.Test;
 
 // https://stackoverflow.com/questions/27952472/serialize-deserialize-java-8-java-time-with-jackson-json-mapper

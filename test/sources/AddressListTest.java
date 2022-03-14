@@ -1,13 +1,13 @@
-package org.fluentcodes.sandbox;
+package sources;
 
-import static org.fluentcodes.sandbox.testitems.ItemProvider.MAPPER;
-import static org.fluentcodes.sandbox.testitems.ItemProvider.createAddressList;
+import static sources.testitems.ItemProvider.MAPPER;
+import static sources.testitems.ItemProvider.createAddressList;
 import static org.junit.Assert.assertEquals;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import java.util.List;
-import org.fluentcodes.sandbox.testitems.Address;
+import sources.testitems.Address;
 import org.junit.Test;
 
 /**
