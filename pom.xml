@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.sandbox</groupId>
-	<artifactId>java-empty-pom</artifactId>
-	<name>Sandbox: Java Empty pom</name>
+	<artifactId>java-libs-feign</artifactId>
+	<name>Sandbox Topic Branch: Java Libs Feign</name>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
-	<description>An empty java branch with pom.</description>
+	<description>Topic Branch Feign.</description>
 	<url>https://github.com/fluentcodes/sandbox</url>
 
 	<properties>
@@ -17,6 +17,21 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-okhttp</artifactId>
+			<version>11.8</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-gson</artifactId>
+			<version>11.8</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-slf4j</artifactId>
+			<version>11.8</version>
+		</dependency>
 	</dependencies>
 
 	<build>

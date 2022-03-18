@@ -1,40 +1,32 @@
-# Topic Branch: Empty pom
-Just an empty branch to start a new topic branch. 
+# Topic Branch: Java Libs Feing
 
-It has a special directory 
-structure to avoid long tree names within the sandbox which will be defined 
-with the [pom.xml](pom.xml). 
-
-    <sourceDirectory>main</sourceDirectory>
-    <resources>
-        <resource>
-            <directory>resources-main</directory>
-        </resource>
-    </resources>
-    <testSourceDirectory>test</testSourceDirectory>
-    <testResources>
-        <testResource>
-            <directory>resources-test</directory>
-        </testResource>
-    </testResources>
+Feign is declarative HTTP client developed by Netflix.
+It aims at simplifying HTTP API clients,
+the developer needs only to declare and annotate an interface while the actual 
+implementation is provisioned at runtime.
 
 [Main.java](main/sources/Main.java) contains a main method:
 
-    public class Main {
-        public static void main(String... args) {
-            Arrays.stream(args).forEach(arg->System.out.println(arg));
-        }
-    }
+
+    public static void main(String... args) {
+      if (args.length == 0) {
+        args = new String[]{"https://www.spiegel.de"};
+      }
+      System.out.println("Get " + args[0]);
+      HttpClient client = Feign.builder()
+        .client(new OkHttpClient())
+        .logger(new Slf4jLogger(String.class))
+        .logLevel(Logger.Level.FULL)
+        .target(HttpClient.class, args[0]);
+      String response = client.get();
+      System.out.println(response);
+}
 
 When calling
 
-    java -jar target/java-empty-pom-0.0.1.jar a b c
+    java -jar target/java-libs-feign-0.0.1.jar https://www.heise.de
 
-will has the following output and stops afterward
-
-    a
-    b
-    c
+will has the output the content of the heise start page.
 
 
 ## Build
@@ -43,38 +35,36 @@ Build with
      mvn clean install 
 
 create a java-empty-pom-0.0.1.jar file in target. 
-It's size is around 2,6 KB.
-
-The manifest information is in the [pom.xml](pom.xml):
-
-    <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-            <archive>
-                <manifest>
-                    <mainClass>sources.Main</mainClass>
-                </manifest>
-            </archive>
-        </configuration>
-    </plugin>
+It's size is around 2,8 KB.
 
 ## Run
 Run it with maven:
 
-     mvn compile exec:java -Dexec.mainClass="sources.Main" -Dexec.args="a b c" 
+     mvn compile exec:java -Dexec.mainClass="sources.Main" -Dexec.args="https://www.spiegel.de" 
 
 ## Dependency Tree
 
 Running
   
     mvn dependency:tree
-is empty.
+
+results in 
+
+    +- io.github.openfeign:feign-okhttp:jar:11.8:compile
+    |  +- io.github.openfeign:feign-core:jar:11.8:compile
+    |  \- com.squareup.okhttp3:okhttp:jar:4.9.2:compile
+    |     +- com.squareup.okio:okio:jar:2.8.0:compile
+    |     |  \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.4.0:compile
+    |     \- org.jetbrains.kotlin:kotlin-stdlib:jar:1.4.10:compile
+    |        \- org.jetbrains:annotations:jar:13.0:compile
+    +- io.github.openfeign:feign-gson:jar:11.8:compile
+    |  \- com.google.code.gson:gson:jar:2.8.9:compile
+    \- io.github.openfeign:feign-slf4j:jar:11.8:compile
+       \- org.slf4j:slf4j-api:jar:1.7.32:compile
 
 ## Related Topic Branches
-* [java-springboot-empty-direct](../../tree/-empty-direct)
-* [java-springboot-empty-parent](../../tree/-empty-parent)
+* [java-empty-pom](../../tree/java-empty-pom)
 
 ### Links
-* http://blog.blackslash.de/archives/26-Maven-JAR-ausfuehrbar-machen%3B-Hauptklasse-dem-Manifest-hinzufuegen.html
-* https://www.baeldung.com/maven-java-main-method
-* https://maven.apache.org/plugins/maven-resources-plugin/examples/resource-directory.html
+* https://www.baeldung.com/intro-to-feign
+* https://github.com/OpenFeign/feign
