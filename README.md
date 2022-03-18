@@ -11,16 +11,19 @@ You find only this README on the master **topic branch**.
 
 ## Recent
 March 2022
-* [java-springboot-objects](../../tree/java-springboot-objects): Added different component examples.
+* [java-design-pattern](/../../tree/java-design-pattern): Initial samples with [SOLID](/../../tree/java-design-pattern/test/samples/solid) principles and  [behavioral](/../../tree/java-design-pattern/test/samples/behavioral) pattern.
+* [java-springboot-objects](/../../tree/java-springboot-objects): Added different component examples.
 * [java-libs-json-jackson](../../tree/java-libs-json-jackson): Updated it with typed maps and lists.
-  * Added typed [map](../../blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressListTest.java) and [list](../../blob/java-libs-json-jackson/src/test/java/org/fluentcodes/sandbox/AddressMapTest.java) tests.
+  * Added typed [map](../../blob/java-libs-json-jackson/test/sources/AddressListTest.java) 
+  * and [list](../../blob/java-libs-json-jackson/test/sources/AddressMapTest.java) tests.
 * [java-springboot-properties](../../tree/java-springboot-properties): Properties and @Values
-  * Added [SpringConfigurableEnvironment](../../blob/java-springboot-properties/src/main/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironment.java) and [SpringConfigurableEnvironmentTest](../../blob/java-springboot-properties/src/test/java/org/fluentcodes/sandbox/springboot/SpringConfigurableEnvironmentTest.java) for showing all properties with its sources as a map.
+  * Added [SpringConfigurableEnvironment](../../blob/java-springboot-properties/test/properties/helper/SpringConfigurableEnvironment.java) and 
+  * [SpringConfigurableEnvironmentTest](../../blob/java-springboot-properties/test/properties/helper/SpringConfigurableEnvironmentTest.java) for showing all properties with its sources as a map.
 * [java-libs-xml-jackson](../../tree/java-libs-xml-jackson): Initial with check of untyped serialization
 * [java-libs-xml-jaxb](../../sandbox/tree/java-libs-xml-jaxb): Check of untyped serialization
 
 February 2022
-* [java-json-jackson](https://github.com/fluentcodes/sandbox/tree/java-json-jackson): Date conversion examples
+* [java-json-jackson](../../tree/java-libs-json-jackson): Date conversion examples
 
 
 ## Intention
@@ -41,24 +44,12 @@ The external wiki is the wiki of github.
 I filled it initially with some content, but not all.
 
 
-## Links
-* https://codingsight.com/git-branching-naming-convention-best-practices/
-
-## Links between branches on Github
-Links between branches are not working as expected on github. A relative link 
-in an README file would be **../tree/branch** but is **../../tree/branch**.
-### Working
-* <a href="../../tree/java-springboot-objects">../../tree/java-springboot-objects with html</a>: working
-* [../../tree/java-springboot-objects](../../tree/java-springboot-objects)
-* [https://github.com/fluentcodes/sandbox/tree/java-springboot-objects](https://github.com/fluentcodes/sandbox/tree/java-springboot-objects)
-### Not Working
-* [../java-springboot-objects](../java-springboot-objects): not working
-* [/tree/java-springboot-objects](/tree/java-springboot-objects): not working
-* [/java-springboot-objects](/java-springboot-objects): not working
-* [/sandbox/tree/java-springboot-objects](/sandbox/tree/java-springboot-objects): not working
-* <a href="../java-springboot-objects">../java-springboot-objects with html</a>: not working
-* <a href="../tree/java-springboot-objects">../tree/java-springboot-objects with html</a>: not working
-
+## Analysis on [GitSamples-GIT](https://github.com/fluentcodes/GitSamples-GIT)
+* [Create new Topic Branches with a Clean History](https://github.com/fluentcodes/GitSamples-GIT/tree/switch-orphan-readme)
+* [Behaviour of Markdown Link in Github](https://github.com/fluentcodes/GitSamples-GIT/tree/github-readme-links)
+* [Automate Git with Aliases](https://github.com/fluentcodes/GitSamples-GIT/tree/automate-git)
 
 ### Links
+* https://codingsight.com/git-branching-naming-convention-best-practices/
 * https://stackoverflow.com/questions/7653483/github-relative-link-in-markdown-file
+* https://levelup.gitconnected.com/what-every-good-readme-should-contain-d6a07d1b39f
