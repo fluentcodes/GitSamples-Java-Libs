@@ -1,31 +1,28 @@
-# Topic Branch: Springboot Empty Direkt
+# GitSample Topic Branch: Micronaut Empty
 
-In [Start.java](main/sources/Start.java) contains just a spring boot main class with a @PostConstruct method. 
+This branch just contains a [Start](main/samples/Start.java) and a
+[StartTest](test/samples/StartTest.java) class.
 
-     @SpringBootApplication
-     public class Start {
-         public static void main(String[] args) {
-             SpringApplication.run(Start.class, args);
-         }
+In [Start.java](main/samples/Start.java) contains just a micronaut main class.
 
-        @PostConstruct
-        public void init() {
-            System.out.println("Init Something");
-        }
-     }
+    public class Start {
+      public static void main(String[] args) {
+        Micronaut.run(Start.class);
+      }
+    }
 
-When calling 
+When calling
 
-    java -jar target/java-springboot-empty-direct-0.0.1.jar
+    java -jar target/java-micronaut-empty-0.0.1.jar
 
-will has the following output and stops automatically afterward
+the micronaut application is started and stopped.
 
-    2022-03-18 09:25:15.115  INFO 11144 --- [           main] sources.Start                            : Starting Start using Java 17.0.1 on MacBook-Air-von-Werner.local with PID 11144 (/Users/werner/dev/sandbox/target/classes started by werner in /Users/werner/dev/sandbox)
-    2022-03-18 09:25:15.117  INFO 11144 --- [           main] sources.Start                            : No active profile set, falling back to 1 default profile: "default"
-    Init Something
-    2022-03-18 09:25:15.369  INFO 11144 --- [           main] sources.Start                            : Started Start in 5.475 seconds (JVM running for 5.811)
-
-    Process finished with exit code 0
+     __  __ _                                  _   
+    |  \/  (_) ___ _ __ ___  _ __   __ _ _   _| |_
+    | |\/| | |/ __| '__/ _ \| '_ \ / _` | | | | __|
+    | |  | | | (__| | | (_) | | | | (_| | |_| | |_
+    |_|  |_|_|\___|_|  \___/|_| |_|\__,_|\__,_|\__|
+    Micronaut (v3.3.4)
 
 
 ## Build
@@ -33,46 +30,43 @@ Build with
 
      mvn clean install 
 
-create a java-springboot-empty-direct-0.0.1.jar file in target. It's size is around 8 MB.
+create a java-micronaut-empty-0.0.1.jar file in target. 
+It's size is around 3,48 MB.
  
 ## Run
 Run it with
 
-    mvn spring-boot:run
+    mvn exec:exec
 
 ## Dependency Tree
 
 Running 
     mvn dependency:tree
 
-has the following result for the spring-boot-starter:
+has the following result:
 
-    +- org.springframework.boot:spring-boot-starter:jar:2.6.4:compile
-    |  +- org.springframework.boot:spring-boot:jar:2.6.4:compile
-    |  |  \- org.springframework:spring-context:jar:5.3.16:compile
-    |  |     +- org.springframework:spring-aop:jar:5.3.16:compile
-    |  |     +- org.springframework:spring-beans:jar:5.3.16:compile
-    |  |     \- org.springframework:spring-expression:jar:5.3.16:compile
-    |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.6.4:compile
-    |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.6.4:compile
-    |  |  +- ch.qos.logback:logback-classic:jar:1.2.10:compile
-    |  |  |  \- ch.qos.logback:logback-core:jar:1.2.10:compile
-    |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.17.1:compile
-    |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
-    |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.36:compile
-    |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
-    |  +- org.springframework:spring-core:jar:5.3.16:compile
-    |  |  \- org.springframework:spring-jcl:jar:5.3.16:compile
-    |  \- org.yaml:snakeyaml:jar:1.29:compile
+    +- io.micronaut:micronaut-context:jar:3.3.4:compile
+    |  +- org.slf4j:slf4j-api:jar:1.7.29:compile
+    |  +- io.micronaut:micronaut-aop:jar:3.3.4:compile
+    |  \- javax.validation:validation-api:jar:2.0.1.Final:compile
+    +- io.micronaut:micronaut-inject:jar:3.3.4:compile
+    |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+    |  +- jakarta.inject:jakarta.inject-api:jar:2.0.1:compile
+    |  +- jakarta.annotation:jakarta.annotation-api:jar:2.0.0:compile
+    |  +- io.micronaut:micronaut-core:jar:3.3.4:compile
+    |  \- org.yaml:snakeyaml:jar:1.30:compile
+    +- io.micronaut:micronaut-inject-java:jar:3.3.4:compile
 
-## Related Topic Branches
-* [java-springboot-CommandLineRunner](../../tree/java-springboot-CommandLineRunner)
-* [java-springboot-web-direct](../../tree/java-springboot-web-direct)
+## Related GitSample Topic Branches
+
+* [java-springboot-empty-direct](../../tree/java-springboot-empty-direct)
 * [java-springboot-empty-parent](../../tree/java-springboot-empty-parent)
 
-
 ### Links
-* https://spring.io/guides/gs/spring-boot/
-* https://github.com/spring-projects/spring-boot/tree/main
-* https://github.com/spring-projects/spring-boot/tree/main/spring-boot-samples
-* [spring initializr](https://start.spring.io/)
+
+* https://github.com/micronaut-projects/micronaut-examples
+* https://micronaut-projects.github.io/micronaut-test/latest/guide/
+* https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin
+* https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin
+* https://micronaut-projects.github.io/micronaut-test/latest/guide/
+* https://stackoverflow.com/questions/57278213/how-do-i-access-the-applicationcontext-from-a-service-within-the-micronaut-frame
