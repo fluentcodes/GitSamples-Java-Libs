@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.sandbox</groupId>
-	<artifactId>java-micronaut-empty</artifactId>
-	<name>GitSample: Java Micronaut Empty</name>
+	<artifactId>java-quarkus-empty</artifactId>
+	<name>GitSample: Java Quarkus Minimal</name>
 	<version>0.0.1</version>
     <packaging>jar</packaging>
-	<description>A springboot application with direct dependencies</description>
+	<description>A minimal quarkus application</description>
 	<url>https://github.com/fluentcodes/sandbox</url>
 
 	<properties>
@@ -19,34 +19,32 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>io.micronaut</groupId>
-				<artifactId>micronaut-bom</artifactId>
-				<version>3.3.4</version>
+				<groupId>io.quarkus.platform</groupId>
+				<artifactId>quarkus-bom</artifactId>
+				<version>2.7.5.Final</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
-			<groupId>io.micronaut</groupId>
-			<artifactId>micronaut-context</artifactId>
-			<version>3.3.4</version>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-resteasy</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut</groupId>
-			<artifactId>micronaut-inject</artifactId>
-			<version>3.3.4</version>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-arc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut</groupId>
-			<artifactId>micronaut-inject-java</artifactId>
-			<version>3.3.4</version>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-junit5</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut.test</groupId>
-			<artifactId>micronaut-test-junit5</artifactId>
-			<version>3.1.1</version>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -75,42 +73,21 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.2.4</version>
+				<groupId>io.quarkus.platform</groupId>
+				<artifactId>quarkus-maven-plugin</artifactId>
+				<version>2.7.5.Final</version>
+				<extensions>true</extensions>
 				<executions>
 					<execution>
-						<phase>package</phase>
 						<goals>
-							<goal>shade</goal>
+							<goal>build</goal>
+							<goal>generate-code</goal>
+							<goal>generate-code-tests</goal>
 						</goals>
-						<configuration>
-							<transformers>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>samples.Start</mainClass>
-								</transformer>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-							</transformers>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<executable>java</executable>
-					<arguments>
-						<argument>-classpath</argument>
-						<classpath/>
-						<argument>-noverify</argument>
-						<argument>-XX:TieredStopAtLevel=1</argument>
-						<argument>-Dcom.sun.management.jmxremote</argument>
-						<argument>samples.Start</argument>
-					</arguments>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 </project>

@@ -1,10 +1,12 @@
 package samples;
 
-import io.micronaut.runtime.Micronaut;
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
 
+@QuarkusMain
 public class Start {
     public static void main(String[] args) {
-        Micronaut.run(Start.class);
+        Quarkus.run(args);
     }
 }
 

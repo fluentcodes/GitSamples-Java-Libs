@@ -58,15 +58,11 @@ has the following result:
     +- io.micronaut:micronaut-inject-java:jar:3.3.4:compile
 
 ## Related GitSample Topic Branches
-
+* [java-micronaut-empty](../../tree/java-micronaut-empty)
 * [java-springboot-empty-direct](../../tree/java-springboot-empty-direct)
 * [java-springboot-empty-parent](../../tree/java-springboot-empty-parent)
 
 ### Links
-
-* https://github.com/micronaut-projects/micronaut-examples
-* https://micronaut-projects.github.io/micronaut-test/latest/guide/
-* https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin
-* https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin
-* https://micronaut-projects.github.io/micronaut-test/latest/guide/
-* https://stackoverflow.com/questions/57278213/how-do-i-access-the-applicationcontext-from-a-service-within-the-micronaut-frame
+* https://quarkus.io/guides/lifecycle
+* https://quarkus.io/guides/getting-started
+* https://opensource.com/article/21/4/quarkus-tutorial: duplicate to previous?
