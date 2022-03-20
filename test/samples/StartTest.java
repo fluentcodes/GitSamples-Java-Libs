@@ -1,11 +1,8 @@
 package samples;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.junit.callback.QuarkusTestMethodContext;
-import javax.inject.Inject;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.Test;
@@ -30,5 +27,10 @@ public class StartTest {
   @Test
   public void testMessageConfigProvider() {
     assertEquals("hello", ConfigProvider.getConfig().getConfigValue("greeting.message").getValue());
+  }
+
+  @Test
+  public void testUberJar() {
+    assertEquals("true", ConfigProvider.getConfig().getConfigValue("quarkus.package.uber-jar").getValue());
   }
 }
